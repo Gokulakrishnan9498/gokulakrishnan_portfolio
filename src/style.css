@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global background and font */
+html {
+    background: #1e1a20;
+    font-size: 16px; /* base size for scaling */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffeded;
+    line-height: 1.5;
+    overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* Canvas background */
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    outline: none;
+    z-index: 0; /* keep canvas behind text */
+}
+
+/* Section container */
+.section {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    padding-left: 10%;
+    padding-right: 10%;
+    z-index: 1; /* keep text above canvas */
+}
+
+/* Alternate section alignment */
+section:nth-child(odd) {
+    justify-content: flex-end;
+}
+
+/* Headings */
+.section h1 {
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.section h2 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+/* Paragraphs */
+.section p {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-weight: 400;
+    max-width: 650px;
+    margin-bottom: 1.1rem;
+}
+
+/* Main project list */
+.projects-list {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* Main project points (keep diamond) */
+.projects-list > li {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-weight: 400;
+    margin-bottom: 0.9rem;
+}
+
+.projects-list > li::before {
+    content: "🔹";
+    margin-right: 0.4rem;
+}
+
+/* Sub-points inside each project */
+.projects-list ul {
+    list-style: none;
+    padding-left: 1.2rem; /* indent sub-points slightly */
+}
+
+.projects-list ul li {
+    font-size: clamp(0.9rem, 2.3vw, 1rem);
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+}
+
+.projects-list ul li::before {
+    content: "• ";
+    color: #ffeded;
+    font-weight: bold;
+}
+
+/* Links and buttons */
+a {
+    text-decoration: none;
+    color: inherit;
+    word-break: break-word; /* prevent overflow */
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+        height: auto; /* let content decide height */
+        min-height: 100vh; /* still fill screen */
+    }
+
+    section:nth-child(odd) {
+        justify-content: center;
+    }
+
+    .section h1 {
+        font-size: clamp(2rem, 8vw, 3.3rem);
+    }
+
+    .section h2 {
+        font-size: clamp(1rem, 4vw, 1.4rem);
+    }
+
+    .section p,
+    .section ul li {
+        font-size: clamp(0.9rem, 3.5vw, 1rem);
+    }
+}
+
+/* 🎥 Demo Button Styles */
+.demo-btn {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1e1a20;
+    background: #ffeded;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.demo-btn:hover {
+    background: #ff4b4b;
+    color: #fff;
+    transform: translateY(-2px);
+}
