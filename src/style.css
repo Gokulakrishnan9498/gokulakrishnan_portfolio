@@ -157,3 +157,21 @@ a {
     color: #fff;
     transform: translateY(-2px);
 }
+
+.resume-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.4rem;
+  background: #ffeded;
+  color: #1e1a20;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.resume-btn:hover {
+  background: #ff4b4b;
+  color: #fff;
+  transform: scale(1.05);
+}
